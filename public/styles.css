@@ -8,3 +8,18 @@ main > h1 {
   padding: 20px;
   background-color: #c0fffe;
 }
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    padding: 20px;
+    background-color: #333333;
+    color: whitesmoke;
+}
+
+main {
+    padding: 20px;
+}

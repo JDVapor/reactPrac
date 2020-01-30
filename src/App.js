@@ -9,6 +9,8 @@ import MenuTwo from "./Menu";
 import FavoriteTwo from "./Favorite";
 import DataFetcher from "./DataFetcher";
 import GrandParent from "./GrandParent";
+import ThemeContext from "./ThemeContext";
+import AppHead from "./AppHead";
 
 class App extends Component {
   state = { count: 0 };
@@ -22,7 +24,7 @@ class App extends Component {
     return (
       <div>
         <main>
-          <h1>Welcome!</h1>
+          <AppHead />
           <Callout>
             <h2>Don't miss out!</h2>
             <p>

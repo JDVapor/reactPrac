@@ -53,53 +53,53 @@ class App extends Component {
             <input type="email" placeholder="Enter Email" />
             <button>Sign me up!</button>
           </Callout>
-        </main>
-        <br />
-        <Example
-          render={arr => {
-            return (
+          <br />
+          <Example
+            render={arr => {
+              return (
+                <div>
+                  <p>{arr.toString()}</p>
+                  <h2>
+                    {arr.reduce((a, b) => a + b, 0) >= 30
+                      ? "YOU MET THE 30 THRESHOLD!"
+                      : "SORRY, YOU NEED MORE POINTS!"}
+                  </h2>
+                </div>
+              );
+            }}
+          />
+          <Menu something="whatever" />
+          <hr />
+          <RoundedImg
+            src="https://picsum.photos/id/237/300/300"
+            borderRadius="10px"
+          />
+          <Favorite />
+          <MenuTwo />
+          <DataFetcher
+            url="https://swapi.co/api/people/1"
+            render={state => (
               <div>
-                <p>{arr.toString()}</p>
-                <h2>
-                  {arr.reduce((a, b) => a + b, 0) >= 30
-                    ? "YOU MET THE 30 THRESHOLD!"
-                    : "SORRY, YOU NEED MORE POINTS!"}
-                </h2>
+                {state.loading ? (
+                  <h1>Loading...</h1>
+                ) : (
+                  <p>{JSON.stringify(state.data)}</p>
+                )}
               </div>
-            );
-          }}
-        />
-        <Menu something="whatever" />
-        <hr />
-        <RoundedImg
-          src="https://picsum.photos/id/237/300/300"
-          borderRadius="10px"
-        />
-        <Favorite />
-        <MenuTwo />
-        <DataFetcher
-          url="https://swapi.co/api/people/1"
-          render={state => (
-            <div>
-              {state.loading ? (
-                <h1>Loading...</h1>
-              ) : (
-                <p>{JSON.stringify(state.data)}</p>
-              )}
-            </div>
-          )}
-        />
-        <Card cardColor="red" cardHeight={200} cardWidth={200} />
-        <Card cardColor="blue" cardHeight={100} cardWidth={150} />
-        <Card cardColor="green" cardWidth={155} />
-        <FavoriteTwo />
-        <div>
-          <button onClick={this.increment}>+1</button>
-          <h2>{this.state.count}</h2>
-          <p>I'm the App component</p>
-          <GrandParent count={this.state.count} />
-          <GrandParent />
-        </div>
+            )}
+          />
+          <Card cardColor="red" cardHeight={200} cardWidth={200} />
+          <Card cardColor="blue" cardHeight={100} cardWidth={150} />
+          <Card cardColor="green" cardWidth={155} />
+          <FavoriteTwo />
+          <div>
+            <button onClick={this.increment}>+1</button>
+            <h2>{this.state.count}</h2>
+            <p>I'm the App component</p>
+            <GrandParent count={this.state.count} />
+            <GrandParent />
+          </div>
+        </main>
       </div>
     );
   }
